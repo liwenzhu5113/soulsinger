@@ -555,6 +555,9 @@
 </template>
 
 <script>
+  import { getUserName } from '@/api/server/server'
+  import { getCodeImg } from "@/api/login";
+  import { getUserNameFeign } from '@/api/consumer/consumer'
 export default {
   name: "Index",
   data() {
@@ -567,7 +570,21 @@ export default {
     goTarget(href) {
       window.open(href, "_blank");
     },
+    getUser() {
+      getUserName({"userId":"100"}).then(res => {
+        console.log(res)
+      });
+    },
+    getUserFeign(){
+      getUserNameFeign({"userId":"200"}).then(res=>{
+        console.log(res)
+      })
+    }
   },
+  created() {
+    // this.getUser();
+    this.getUserFeign();
+  }
 };
 </script>
 
