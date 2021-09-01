@@ -22,11 +22,12 @@ public class UserController {
         }
     }
     @RequestMapping("/getUserAge")
-    public AjaxResult getUserAge(@RequestParam("userId") String userId){
+    public AjaxResult getUserAge(String userId){
+        System.out.println(userId);
         if ("50".equals(userId)){
-            return AjaxResult.success("200","10");
+            return AjaxResult.success("200","50");
         }else {
-            return AjaxResult.success("200","20");
+            return AjaxResult.success("200","不是50");
         }
     }
 }

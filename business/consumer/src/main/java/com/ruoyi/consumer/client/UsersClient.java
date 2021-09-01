@@ -19,5 +19,5 @@ public interface UsersClient {
     public AjaxResult getUserName(@RequestBody User user);
 
     @GetMapping("/getUserAge")
-    public String getUserAge(@RequestParam("userId") String userId, @SpringQueryMap User user);
+    public AjaxResult getUserAge(@RequestParam("userId") String userId);
 }

@@ -21,9 +21,15 @@ public class UserController {
     @Autowired
     private UsersClient usersClient;
 
-    //form 写法
+    //表单写法
     @RequestMapping("/getUserName")
     public AjaxResult getUserName(@RequestBody User user){
         return usersClient.getUserName(user) ;
+    }
+
+    //key-value写法
+    @RequestMapping("/getUserAge")
+    public AjaxResult getUserAge(String userId){
+        return usersClient.getUserAge(userId);
     }
 }

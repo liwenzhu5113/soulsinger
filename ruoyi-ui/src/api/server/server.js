@@ -9,3 +9,10 @@ export function getUserName(data) {
   })
 }
 
+export function getUserAge(data) {
+  return request({
+    url: API_URL+'/user/getUserAge',
+    method: 'get',
+    params: data
+  })
+}

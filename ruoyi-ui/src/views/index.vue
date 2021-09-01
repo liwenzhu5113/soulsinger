@@ -555,15 +555,15 @@
 </template>
 
 <script>
-  import { getUserName } from '@/api/server/server'
-  import { getCodeImg } from "@/api/login";
-  import { getUserNameFeign } from '@/api/consumer/consumer'
+  import { getUserName,getUserAge } from '@/api/server/server'
+  import { getUserNameFeign,getUserAgeFeign } from '@/api/consumer/consumer'
 export default {
   name: "Index",
   data() {
     return {
       // 版本号
       version: "3.1.0",
+      userId: 150
     };
   },
   methods: {
@@ -579,11 +579,23 @@ export default {
       getUserNameFeign({"userId":"200"}).then(res=>{
         console.log(res)
       })
+    },
+    getUserAge(){
+      getUserAge({"userId":"50"}).then(res=>{
+        console.log(res);
+      })
+    },
+    getUserAgeFeign(){
+      getUserAgeFeign({"userId":"150"}).thead(res=>{
+        console.log(res);
+      })
     }
   },
   created() {
-    // this.getUser();
+    this.getUser();
     this.getUserFeign();
+    this.getUserAge();
+    this.getUserAgeFeign();
   }
 };
 </script>

@@ -9,3 +9,10 @@ export function getUserNameFeign(data) {
   })
 }
 
+export function getUserAgeFeign(data) {
+  return request({
+    url: API_URL+'/getUserAge',
+    method: 'post',
+    params: data
+  })
+}
